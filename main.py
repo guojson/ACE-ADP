@@ -383,10 +383,10 @@ if __name__ == '__main__':
                                   seq_length=config.sequence_length,
                                   )
         logger.info('GET!!')
-        dev_iter = DataIterator(config.batch_size, data_file=result_data_dir + '/test.txt', config=config,
+        dev_iter = DataIterator(config.batch_size, data_file=result_data_dir + '/dev.txt', config=config,
                                 gen_path=result_data_dir + '/dev.pkl', use_bert=config.use_bert, tokenizer=tokenizer,
                                 seq_length=config.sequence_length, is_test=True)
-        test_iter = DataIterator(config.batch_size, data_file=result_data_dir + '/dev.txt', config=config,
+        test_iter = DataIterator(config.batch_size, data_file=result_data_dir + '/test.txt', config=config,
                                  gen_path=result_data_dir + '/test.pkl', use_bert=config.use_bert, tokenizer=tokenizer,
                                  seq_length=config.sequence_length, is_test=True)
         train(train_iter, dev_iter, test_iter, config)
